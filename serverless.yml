@@ -22,7 +22,12 @@ frameworkVersion: '3'
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs16.x
+  stage: ${opt:stage, 'dev'}
+  region: us-east-1
+  apiGateway:
+    restApiId: ${cf:api-${self:provider.stage}.ApiGatewayRestApiId}
+    restApiRootResourceId: ${cf:api-${self:provider.stage}.ApiGatewayRestApiResourceId}
 
 # you can overwrite defaults here
 #  stage: dev
@@ -64,10 +69,10 @@ functions:
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
-#    events:
-#      - httpApi:
-#          path: /users/create
-#          method: get
+    events:
+      - http:
+          path: /hello/world
+          method: get
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
