@@ -15,7 +15,6 @@
   "dependencies": {},
   "devDependencies": {
     "@types/aws-lambda": "^8.10.104",
-    "global": "^4.4.0",
     "serverless-plugin-common-excludes": "^4.0.0",
     "serverless-plugin-include-dependencies": "^5.0.0",
     "tsc": "^2.0.4",
