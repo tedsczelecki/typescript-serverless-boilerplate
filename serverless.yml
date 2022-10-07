@@ -19,17 +19,24 @@ package:
   individually: true
   patterns:
     - '!node_modules/**'
+    - '!node_modules/**/src/**'
     - '!src/**'
     - '!scripts/**'
     - '!dist/**'
     - '!layers/**'
+    - '!database/**'
     - '!schema.prisma'
     - '!tsconfig.json'
     - '!tslint.json'
+    - 'prisma/**'
+    - 'node_modules/.prisma/**'
 
 functions:
   hello:
     handler: dist/endpoints/hello/handler.hello
+    package:
+      patterns:
+        - 'dist/endpoints/hello/handler.js'
     events:
       - http:
           path: /hello/world
