@@ -6,10 +6,10 @@
   "scripts": {
     "build": "tsc --build && sh scripts/moveFiles.sh",
     "build:cleanup": "sh scripts/cleanup.sh",
-    "deploy:prod": "yarn build && export AWS_PROFILE=rekaper && sls -s prod deploy ",
-    "deploy": "yarn build && export AWS_PROFILE=rekaper && yes | sls -s dev deploy && yarn build:cleanup",
-    "deploy:function": "yarn build && export AWS_PROFILE=rekaper && sls deploy -s dev function",
-    "deploy:prod:function": "yarn build && export AWS_PROFILE=rekaper && sls -s prod deploy function"
+    "deploy:prod": "yarn build && export AWS_PROFILE=default && sls -s prod deploy ",
+    "deploy": "yarn build && export AWS_PROFILE=default && yes | sls -s dev deploy && yarn build:cleanup",
+    "deploy:function": "yarn build && export AWS_PROFILE=default && sls deploy -s dev function",
+    "deploy:prod:function": "yarn build && export AWS_PROFILE=default && sls -s prod deploy function"
   },
   "author": "",
   "license": "ISC",
