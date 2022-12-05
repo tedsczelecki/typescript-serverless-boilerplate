@@ -33,10 +33,10 @@ package:
 
 functions:
   hello:
-    handler: dist/endpoints/hello/handler.hello
+    handler: dist/endpoints/hello/world.handler
     package:
       patterns:
-        - 'dist/endpoints/hello/handler.js'
+        - 'dist/endpoints/hello/world.js'
     events:
       - http:
           path: /hello/world
